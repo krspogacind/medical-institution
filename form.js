@@ -24,7 +24,6 @@ $(document).ready(function () {
       alert('Wrong test type');
     }
   });
-  console.log(doctors);
 });
 
 function addDoctor(e) {
@@ -75,6 +74,7 @@ function addPatient(e) {
   doctors.forEach(doctor => {
     $(`#${newPatient.id}`).append(new Option(doctor.firstName + ' ' + doctor.lastName, JSON.stringify(doctor)));
   });
+  $('#patient').append(new Option(newPatient.firstName + ' ' + newPatient.lastName, JSON.stringify(newPatient)));
 }
 
 function doTest(id){
