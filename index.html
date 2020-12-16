@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Medical institution</title>
+</head>
+<body>
+    <div class="block">
+        <h1>Doctor</h1>
+        <form id="doctorForm">
+            <input type="text" placeholder="Ime" name="firstName" required>
+            <br/>
+            <input type="text" placeholder="Prezime" name="lastName" required> 
+            <br/>
+            <input type="text" placeholder="Specijalnost" name="specialization" required>
+            <br/>
+            <button onclick="addDoctor(event)">Add doctor</button>
+        </form>
+        <br/>
+        <table id="doctorTable">
+            <tr>
+                <th>Ime</th>
+                <th>Prezime</th>
+                <th>Specijalizacija</th>
+            </tr>
+        </table>
+    </div>
+    <br/>
+    <div class="block">
+        <h1>Patient</h1>
+        <form id="patientForm">
+            <input type="text" placeholder="Ime" name="firstName" required>
+            <br/>
+            <input type="text" placeholder="Prezime" name="lastName" required>
+            <br/>
+            <input type="text" placeholder="JMBG" name="uin" required>
+            <br/>
+            <input type="text" placeholder="Broj zdravstvenog kartona" name="hcn" required>
+            <br/>
+            <button onclick="addPatient(event)">Add patient</button>
+        </form>
+        <br/>
+        <table id="patientTable">
+            <tr>
+                <th>Ime</th>
+                <th>Prezime</th>
+                <th>JMBG</th>
+                <th>Broj zdravstvenog kartona</th>
+                <th>Doktor</th>
+            </tr>
+        </table>
+    </div>
+    <br/>
+    <div class="block">
+        <h1>Laboratory tests</h1>
+        <form id="testForm">
+            <select id="patient" name="patient" class="form_select" required>
+                <option value="">--- Select patient ---</option>
+            </select>
+            <br/>
+            <input type="date" name="testDate" required>
+            <br/>
+            <input type="time" name="testTime" required>
+            <br/>
+            <select name="type" class="form_select" required>
+                <option value="">--- Select test type ---</option>
+                <option value="BP">Krvni pritisak</option>
+                <option value="BSL">Nivo secera u krvi</option>
+                <option value="BCL">Nivo holesterola u krvi</option>
+            </select>
+            <br/>
+            <button onclick="addTest(event)">Add test</button>
+        </form>
+        <br/>
+        <table id="testTable">
+            <tr>
+                <th>Datun</th>
+                <th>Vreme</th>
+                <th>Tip</th>
+                <th>Pacijent</th>
+                <th>Rezultati</th>
+            </tr>
+        </table>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="./medical-institution.js"></script>
+    <script type="text/javascript" src="./test-script.js"></script>
+    <script type="text/javascript" src="./form.js"></script>
+</body>
+</html>
